@@ -2,7 +2,6 @@
 
 use PHPUnit\Framework\TestCase;
 use App\Boat;
-use App\TimeOnDistanceHandicap as TOD;
 
 class BoatTest extends TestCase
 {
