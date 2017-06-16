@@ -13,14 +13,24 @@ class Boat
         $this->rating = $rating;
     }
 
-    public function boatname() 
+    public function name() 
     {
         return $this->name;
+    }
+    
+    public function setName($name) 
+    {
+        $this->name = $name;
     }
 
     public function rating()
     {
         return $this->rating;
+    }
+
+    public function setRating($rating) 
+    {
+        $this->rating = $rating;
     }
 
 }

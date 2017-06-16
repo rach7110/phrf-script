@@ -15,7 +15,7 @@ class BoatTest extends TestCase
     /** @test */
     public function a_boat_has_a_name() 
     {
-        $this->assertEquals('Jade', $this->boat->boatname());
+        $this->assertEquals('Jade', $this->boat->name());
     }
 
     /** @test */
@@ -24,5 +24,19 @@ class BoatTest extends TestCase
         $this->assertEquals(98, $this->boat->rating());
     }
 
+    /** @test */
+    public function a_user_can_set_change_boat_name() 
+    {
+        $this->boat->setName('Sparkle');
 
+        $this->assertEquals('Sparkle', $this->boat->name());
+    }
+
+    /** @test */
+    public function a_user_can_set_change_boat_rating() 
+    {
+        $this->boat->setRating(105);
+
+        $this->assertEquals(105, $this->boat->rating());
+    }
 }
