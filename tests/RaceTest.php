@@ -5,38 +5,40 @@ use App\Race;
 
 class RaceTest extends TestCase
 {
+
+    protected $race;
+    
+    public function setUp() 
+    {
+        $this->race = new Race;
+    }
+
     /** @test */
     public function a_race_has_a_distance()
     {
-        $race = new Race;
-
-        $this->assertEquals(0, $race->distance());
+        $this->assertEquals(0, $this->race->distance());
     }
 
     /** @test */
     public function a_user_can_set_the_race_distance()
     {
-        $race = new Race;
-        $race->setDistance(10);
+        $this->race->setDistance(10);
 
-        $this->assertEquals(10, $race->distance());
+        $this->assertEquals(10, $this->race->distance());
     }
 
     /** @test */
     public function a_race_has_a_start_time()
     {
-        $race = new Race;
-
-        $this->assertEquals(0, $race->start());
+        $this->assertEquals(0, $this->race->start());
     }
 
     /** @test */
     public function a_user_can_set_the_race_start_time()
     {
-        $race = new Race;
-        $race->setStart(1200);
+        $this->race->setStart(1200);
 
-        $this->assertEquals(1200, $race->start());
+        $this->assertEquals(1200, $this->race->start());
     }
 
 }
