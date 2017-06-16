@@ -2,20 +2,22 @@
 
 namespace App;
 
-use App\Boat;
-
-class TimeOnDistanceHandicap extends Boat
+class TimeOnDistanceHandicap 
 {
     protected $boat;
+    protected $race;
 
-    public function __construct($boat) 
+    public function __construct($boat, $race) 
     {
         $this->boat = $boat;
+        $this->race = $race;
     }
 
-    public function corrected_time($elapsed_time, $distance)
+    public function corrected_time($elapsed_time)
     {
-        $rating = $this->boat->rating;
+        $rating = $this->boat->rating();
+        $distance = $this->race->distance();
+
         $corrected_time = $elapsed_time - ($rating * $distance);
 
         return $corrected_time;
