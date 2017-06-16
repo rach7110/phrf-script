@@ -7,20 +7,41 @@ use App\Race;
 
 class TimeOnDistanceHandicapTest extends TestCase
 {
+    public function setUp()
+    {
+        $this->boat = new Boat('Tinkerbell', 100);
+        $this->race = new Race;
+    }
     /** @test */
     public function a_tod_handicap_corrects_a_boats_finish_time()
-    {
-        $boat = new Boat('Tinkerbell', 100);
-        
-        $race = new Race;
-        $race->setDistance(10);
-        $race->setStart(0);
+    {        
+        $this->race->setDistance(10);
+        $this->race->setStart(0);
 
-        $tod = new TOD($boat, $race);
+        $tod = new TOD($this->boat, $this->race);
         $corrected_time = $tod->corrected_time($finish_time=3600);
 
         $this->assertEquals(2600, $corrected_time);
     }
+    /** 
+        @test
+        @expectedException Exception
+     */
+    public function a_tod_handicap_has_race_with_valid_start_time() 
+    {
+        $this->race->setDistance(10);
 
-    // TODO: TEST THAT DISTANCE AND START TIME ARE NOT NULL WHEN CALCULATING CORRECTED TIME.
+        $tod = new TOD($this->boat, $this->race);
+    }
+    /** 
+        @test
+        @expectedException Exception
+     */
+    public function a_tod_handicap_has_race_with_valid_distance() 
+    {
+        $this->race->setStart(1000);
+
+        $tod = new TOD($this->boat, $this->race);
+    }
+
 }
