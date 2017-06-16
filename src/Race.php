@@ -5,12 +5,8 @@ namespace App;
 class Race 
 {
  protected $distance=0;
+ protected $start=0;
  
- public function __construct()
- {
-    $this->distance = $distance;
- }   
-
  public function distance()
  {
     return $this->distance;
@@ -20,4 +16,15 @@ class Race
  {
     $this->distance = $distance;
  }
+
+  public function start()
+ {
+    return $this->start;
+ }
+
+ public function setStart($start)
+ {
+    $this->start = $start;
+ }
+
 }
