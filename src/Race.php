@@ -4,8 +4,6 @@ namespace App;
 
 class Race 
 {
- protected $distance=0;
- protected $start=0;
  
  public function distance()
  {

@@ -13,12 +13,12 @@ class TimeOnDistanceHandicap
         $this->race = $race;
     }
 
-    public function corrected_time($elapsed_time)
+    public function corrected_time($finish_time)
     {
-        $rating = $this->boat->rating();
-        $distance = $this->race->distance();
+        $start_time = $this->race->start();
+        $elapsed_time = $finish_time - $start_time;
 
-        $corrected_time = $elapsed_time - ($rating * $distance);
+        $corrected_time = $elapsed_time - ($this->boat->rating() * $this->race->distance());
 
         return $corrected_time;
     }

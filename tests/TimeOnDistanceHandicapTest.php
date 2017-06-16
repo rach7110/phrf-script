@@ -14,11 +14,13 @@ class TimeOnDistanceHandicapTest extends TestCase
         
         $race = new Race;
         $race->setDistance(10);
+        $race->setStart(0);
 
         $tod = new TOD($boat, $race);
-        $corrected_time = $tod->corrected_time($time=3600);
+        $corrected_time = $tod->corrected_time($finish_time=3600);
 
         $this->assertEquals(2600, $corrected_time);
-
     }
+
+    // TODO: TEST THAT DISTANCE AND START TIME ARE NOT NULL WHEN CALCULATING CORRECTED TIME.
 }
