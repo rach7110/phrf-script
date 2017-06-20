@@ -3,13 +3,15 @@
 namespace App;
 
 use Exception;
+use App\Boat;
+use App\Race;
 
 class TimeOnTimeHandicap 
 {
     protected $boat;
     protected $race;
 
-    public function __construct($boat, $race) 
+    public function __construct(Boat $boat, Race $race) 
     {
         $this->boat = $boat;
         $this->race = $race;
