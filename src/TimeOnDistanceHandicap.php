@@ -25,7 +25,7 @@ class TimeOnDistanceHandicap
         $start_time = $race->start();
         $elapsed_time = $finish_time - $start_time;
 
-        $corrected_time = $elapsed_time - ($boat->rating() * $race->distance());
+        $corrected_time = $elapsed_time - ($boat->phrfRating() * $race->distance());
 
         return $corrected_time;
     }

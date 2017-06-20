@@ -5,12 +5,12 @@ namespace App;
 class Boat 
 {
     protected $name;
-    protected $rating;
+    protected $phrf_rating;
 
-    public function __construct($name, $rating)
+    public function __construct($name, $phrf_rating)
     {
         $this->name = $name;
-        $this->rating = $rating;
+        $this->phrf_rating = $phrf_rating;
     }
 
     public function name() 
@@ -23,14 +23,14 @@ class Boat
         $this->name = $name;
     }
 
-    public function rating()
+    public function phrfRating()
     {
-        return $this->rating;
+        return $this->phrf_rating;
     }
 
-    public function setRating($rating) 
+    public function setPhrfRating($phrf_rating) 
     {
-        $this->rating = $rating;
+        $this->phrf_rating = $phrf_rating;
     }
 
 }

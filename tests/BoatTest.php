@@ -19,9 +19,9 @@ class BoatTest extends TestCase
     }
 
     /** @test */
-    public function a_boat_has_a_rating() 
+    public function a_boat_has_a_phrf_rating() 
     {
-        $this->assertEquals(98, $this->boat->rating());
+        $this->assertEquals(98, $this->boat->phrfRating());
     }
 
     /** @test */
@@ -33,10 +33,10 @@ class BoatTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_change_boat_rating() 
+    public function a_user_can_change_boat_phrf_rating() 
     {
-        $this->boat->setRating(105);
+        $this->boat->setPhrfRating(105);
 
-        $this->assertEquals(105, $this->boat->rating());
+        $this->assertEquals(105, $this->boat->phrfRating());
     }
 }
