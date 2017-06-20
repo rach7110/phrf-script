@@ -17,7 +17,7 @@ class TimeOnDistanceHandicap
         $this->validate();
     }
 
-    public function corrected_time($finish_time)
+    public function correctedTime($finish_time)
     {   
         $race = $this->race;
         $boat = $this->boat;

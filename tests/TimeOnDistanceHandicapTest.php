@@ -19,7 +19,7 @@ class TimeOnDistanceHandicapTest extends TestCase
         $this->race->setStart(0);
 
         $tod = new TOD($this->boat, $this->race);
-        $corrected_time = $tod->corrected_time($finish_time=3600);
+        $corrected_time = $tod->correctedTime($finish_time=3600);
 
         $this->assertEquals(2600, $corrected_time);
     }
