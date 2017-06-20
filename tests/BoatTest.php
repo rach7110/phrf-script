@@ -25,7 +25,7 @@ class BoatTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_set_change_boat_name() 
+    public function a_user_can_change_boat_name() 
     {
         $this->boat->setName('Sparkle');
 
@@ -33,7 +33,7 @@ class BoatTest extends TestCase
     }
 
     /** @test */
-    public function a_user_can_set_change_boat_rating() 
+    public function a_user_can_change_boat_rating() 
     {
         $this->boat->setRating(105);
 

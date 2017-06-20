@@ -19,10 +19,13 @@ class TimeOnDistanceHandicap
 
     public function corrected_time($finish_time)
     {   
-        $start_time = $this->race->start();
+        $race = $this->race;
+        $boat = $this->boat;
+
+        $start_time = $race->start();
         $elapsed_time = $finish_time - $start_time;
 
-        $corrected_time = $elapsed_time - ($this->boat->rating() * $this->race->distance());
+        $corrected_time = $elapsed_time - ($boat->rating() * $race->distance());
 
         return $corrected_time;
     }
@@ -36,7 +39,7 @@ class TimeOnDistanceHandicap
 
         if( is_null($this->race->distance())  )
         {
-            throw new Exception('A race distance time must be saved before using this handicap.');
+            throw new Exception('A race distance must be saved before using this handicap.');
 
         }
     }
