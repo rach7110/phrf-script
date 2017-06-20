@@ -17,19 +17,6 @@ class TimeOnDistanceHandicap
         $this->validate();
     }
 
-    public function correctedTime($finish_time)
-    {   
-        $race = $this->race;
-        $boat = $this->boat;
-
-        $start_time = $race->start();
-        $elapsed_time = $finish_time - $start_time;
-
-        $corrected_time = $elapsed_time - ($boat->phrfRating() * $race->distance());
-
-        return $corrected_time;
-    }
-
     public function validate()
     {
         if( is_null($this->race->start())  )
@@ -44,5 +31,17 @@ class TimeOnDistanceHandicap
         }
     }
 
+    public function correctedTime($finish_time)
+    {   
+        $boat = $this->boat;
+        $race = $this->race;
+
+        $start_time = $race->start();
+        $elapsed_time = $finish_time - $start_time;
+
+        $corrected_time = $elapsed_time - ($boat->phrfRating() * $race->distance());
+
+        return $corrected_time;
+    }
 
 }
