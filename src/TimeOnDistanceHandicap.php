@@ -6,7 +6,7 @@ use Exception;
 use App\Boat;
 use App\Race;
 
-class TimeOnDistanceHandicap 
+class TimeOnDistanceHandicap implements PhrfHandicap
 {
     protected $boat;
     protected $race;

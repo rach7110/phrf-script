@@ -6,7 +6,7 @@ use Exception;
 use App\Boat;
 use App\Race;
 
-class TimeOnTimeHandicap 
+class TimeOnTimeHandicap implements PhrfHandicap
 {
     protected $boat;
     protected $race;
