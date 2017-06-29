@@ -1,11 +1,33 @@
 ***************************
-Naming Conventions:
+PHP Style Guide:
 ***************************
-    methods - app: camelCase()
-    methods - testing: under_score()
-    
-    class: StudlyCaps
-    
-    constants: ALL_UPCASE
+methods - app: camelCase()
+methods - testing: under_score()
 
-    properties, variables, arguments: $under_score
+class: StudlyCaps
+
+constants: ALL_UPCASE
+
+properties, variables, arguments: $under_score
+
+
+***************************
+Definitions:
+***************************
+PHRF - Performance Handicap Racing Fleet
+
+PHRF TOD - PHRF time on distance
+
+PHRF TOT - PHRF time on time
+
+
+
+***************************
+Calculations:
+***************************
+
+PHRF TOD:
+    corrected time = elpased time - (PHRF handicap * distance)
+
+PHRF TOT:
+    corrected time = elapsed time * ( A-factor / ( B-factor + PHRF handicap) )
