@@ -24,12 +24,12 @@ class TimeOnDistanceHandicap implements PhrfHandicap
     {
         if(is_null($this->race->start()))
         {
-            throw new Exception('A race start time must be saved before using this handicap.');
+            throw new Exception('A race start time must be saved before using time on distance handicap.');
         }
 
         if(is_null($this->race->distance()))
         {
-            throw new Exception('A race distance must be saved before using this handicap.');
+            throw new Exception('A race distance must be saved before using time on distance handicap.');
 
         }
     }

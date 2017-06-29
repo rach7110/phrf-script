@@ -24,7 +24,7 @@ class TimeOnTimeHandicap implements PhrfHandicap
     {
         if(is_null($this->race->start()))
         {
-            throw new Exception('A race start time must be saved before using this handicap.');
+            throw new Exception('A race start time must be saved before using time on time handicap.');
         }
     }
 
