@@ -11,11 +11,15 @@ class TimeOnTimeHandicap implements PhrfHandicap
 {
     protected $boat;
     protected $race;
+    public $a_factor;
+    public $b_factor;
 
-    public function __construct(Boat $boat, Race $race) 
+    public function __construct(Boat $boat, Race $race, $a_factor, $b_factor) 
     {
         $this->boat = $boat;
         $this->race = $race;
+        $this->a_factor = $a_factor;
+        $this->b_factor = $b_factor;
 
         $this->validate();
     }
@@ -28,10 +32,23 @@ class TimeOnTimeHandicap implements PhrfHandicap
         }
     }
 
-    public function correctedTime($finish_time, $a_factor, $b_factor)
+    public function correctedTime($finish_time)
     {
         $boat = $this->boat;
         $race = $this->race;
+        $a_factor = $this->a_factor;
+        $b_factor = $this->b_factor;
+
+
+        if(is_null($a_factor))
+        {
+            throw new Exception('A-factor must be saved before using time on time handicap.');
+        }
+
+        if(is_null($b_factor))
+        {
+            throw new Exception('B-factor must be saved before using time on time handicap.');
+        }
 
         $elapsed_time = $finish_time - $race->start();
         $tcf = $a_factor / ($b_factor + $boat->phrfRating());
