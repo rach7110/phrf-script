@@ -5,6 +5,7 @@ namespace App;
 use Exception;
 use App\Boat;
 use App\Race;
+use App\PhrfHandicap;
 
 class TimeOnDistanceHandicap implements PhrfHandicap
 {
@@ -21,12 +22,12 @@ class TimeOnDistanceHandicap implements PhrfHandicap
 
     public function validate()
     {
-        if( is_null($this->race->start())  )
+        if(is_null($this->race->start()))
         {
             throw new Exception('A race start time must be saved before using this handicap.');
         }
 
-        if( is_null($this->race->distance())  )
+        if(is_null($this->race->distance()))
         {
             throw new Exception('A race distance must be saved before using this handicap.');
 

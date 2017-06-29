@@ -2,8 +2,10 @@
 
 use PHPUnit\Framework\TestCase;
 use App\TimeOnTimeHandicap as TOT;
+use App\PhrfHandicap;
 use App\Boat;
 use App\Race;
+
 
 class TimeOnTimeHandicapTest extends TestCase
 {

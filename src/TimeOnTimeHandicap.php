@@ -5,6 +5,7 @@ namespace App;
 use Exception;
 use App\Boat;
 use App\Race;
+use App\PhrfHandicap;
 
 class TimeOnTimeHandicap implements PhrfHandicap
 {

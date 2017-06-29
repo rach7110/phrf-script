@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use App\TimeOnDistanceHandicap as TOD;
+use App\PhrfHandicap;
 use App\Boat;
 use App\Race;
 
