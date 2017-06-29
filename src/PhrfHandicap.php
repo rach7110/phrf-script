@@ -1,6 +1,8 @@
 <?php 
 
+namespace App;
+
 interface PhrfHandicap
 {
-    public function correctedTime();
+    public function correctedTime($finish_time);
 }
