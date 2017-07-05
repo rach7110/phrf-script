@@ -7,11 +7,9 @@ use App\Race;
 
 class ScorePhrf
 {
-    public $race;
-    public $boat;
-    public $phrf_method;
+    public $phrf_handicap;
 
-    public function __construct(PhrfHandicap $phrf_method)
+    public function __construct(PhrfHandicap $phrf_handicap)
     {
         $this->phrf_method = $phrf_method;
     }

@@ -5,6 +5,7 @@ use App\Race;
 use App\Boat;
 use App\ScorePhrf;
 use App\TimeOnDistanceHandicap as TOD;
+use App\TimeOnTimeHandicap as TOT;
 
 class ScorePhrfTest extends TestCase
 {
@@ -26,7 +27,7 @@ class ScorePhrfTest extends TestCase
     /** @test */
     public function a_score_works_with_time_on_time() 
     {
-        $tod = new TOD($this->boat, $this->race);
-        $this->phrf_score = new ScorePhrf($tod);
+        $tot = new TOT($this->boat, $this->race, 650, 550);
+        $this->phrf_score = new ScorePhrf($tot);
     }
 }
