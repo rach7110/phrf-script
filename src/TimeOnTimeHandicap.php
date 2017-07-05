@@ -30,6 +30,17 @@ class TimeOnTimeHandicap implements PhrfHandicap
         {
             throw new Exception('A race start time must be saved before using time on time handicap.');
         }
+
+        if(is_null($this->a_factor))
+        {
+            throw new Exception('A-factor must be saved before using time on time handicap.');
+        }
+
+        if(is_null($this->b_factor))
+        {
+            throw new Exception('B-factor must be saved before using time on time handicap.');
+        }
+
     }
 
     public function correctedTime($finish_time)
@@ -38,17 +49,6 @@ class TimeOnTimeHandicap implements PhrfHandicap
         $race = $this->race;
         $a_factor = $this->a_factor;
         $b_factor = $this->b_factor;
-
-
-        if(is_null($a_factor))
-        {
-            throw new Exception('A-factor must be saved before using time on time handicap.');
-        }
-
-        if(is_null($b_factor))
-        {
-            throw new Exception('B-factor must be saved before using time on time handicap.');
-        }
 
         $elapsed_time = $finish_time - $race->start();
         $tcf = $a_factor / ($b_factor + $boat->phrfRating());
