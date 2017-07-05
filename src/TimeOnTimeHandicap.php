@@ -13,6 +13,8 @@ class TimeOnTimeHandicap implements PhrfHandicap
     protected $race;
     public $a_factor;
     public $b_factor;
+    const ID = 2;
+    const DESCRIPTION = "placeholder 2";
 
     public function __construct(Boat $boat, Race $race, $a_factor, $b_factor) 
     {

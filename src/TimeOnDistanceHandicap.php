@@ -11,6 +11,8 @@ class TimeOnDistanceHandicap implements PhrfHandicap
 {
     protected $boat;
     protected $race;
+    const id = 1;
+    const description = "placeholder 1";
 
     public function __construct(Boat $boat, Race $race) 
     {
