@@ -11,7 +11,7 @@ class ScorePhrf
 
     public function __construct(PhrfHandicap $phrf_handicap)
     {
-        $this->phrf_method = $phrf_method;
+        $this->phrf_handicap = $phrf_handicap;
     }
 
 }

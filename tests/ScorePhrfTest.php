@@ -21,13 +21,19 @@ class ScorePhrfTest extends TestCase
     public function a_score_works_with_time_on_distance() 
     {
         $tod = new TOD($this->boat, $this->race);
-        $this->phrf_score = new ScorePhrf($tod);  
+        $phrf_score = new ScorePhrf($tod);
+        $handicap_type = $phrf_score->phrf_handicap;
+
+        $this->assertInstanceOf(TOD::class, $handicap_type);
     }
 
     /** @test */
     public function a_score_works_with_time_on_time() 
     {
         $tot = new TOT($this->boat, $this->race, 650, 550);
-        $this->phrf_score = new ScorePhrf($tot);
+        $phrf_score = new ScorePhrf($tot);
+        $handicap_type = $phrf_score->phrf_handicap;
+
+        $this->assertInstanceOf(TOT::class, $handicap_type);
     }
 }
